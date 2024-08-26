@@ -1,0 +1,162 @@
+/*網頁背景*/
+body {
+  background-color: #eee;
+  margin: 0;
+  /* 間距 */
+
+  padding: 0;
+  /* 填滿 */
+
+  display: flex;
+  /* 設定為彈性容器 */
+
+  justify-content: center;
+  /* 主軸排列方式(放在左右) */
+
+  align-items: center;
+  /* 交叉軸排列方式(放在上下) */
+
+  /* height: 100vh; */
+
+  flex-direction: column;
+  /* 定義主軸是由下往上 */
+}
+
+/*遊戲面板*/
+#gameboard {
+  height: 300px;
+  width: 300px;
+  background-color: brown;
+  display: flex;
+  flex-wrap: wrap;
+  /*超出容器範圍允許換行*/
+  border: 2px solid black
+}
+
+/*格子和格線樣式*/
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  /*這裡很重要!  決定小方格內的OX會不會置中! */
+  /*忘記寫會變成貼其左上邊線! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 設計OX */
+.circle {
+  height: 90px;
+  width: 90px;
+  border: 15px solid purple;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+  /*讓圖片大小適應格子*/
+
+  justify-content: center;
+  align-items: center;
+}
+
+/*因為沒有辦法直接創建X圖案,所以我得先創造一直一橫兩條交叉直線,然後旋轉他們*/
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  /*用relative是因為要用before和after*/
+  transform: rotate(45deg);
+}
+
+.cross:before,
+.cross:after {
+  content: "";
+  /*用來給X定位的空白字符*/
+  position: absolute;
+  /*絕對位置*/
+  background-color: orangered;
+
+}
+
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
+}
+
+
+/*按鈕*/
+#downbtn {
+  justify-content: center;
+}
+
+#turnback {
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  margin-left: 50px;
+}
+
+#info {
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* .grid {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+} */
+
+
+/* 
+.decor{
+    background-color: pink;
+  }
+  div{
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .vw{
+    width: 15vw;
+    height: 15vw;
+    line-height: 15vw;
+  }
+  .vh{
+    width: 15vh;
+    height: 15vh;
+    line-height: 15vh;
+  }
+  .vmax{
+    width: 15vmax;
+    height: 15vmax;
+    line-height: 15vmax;
+  }
+  .vmin{
+    width: 15vmin;
+    height: 15vmin;
+    line-height: 15vmin;
+  } */

@@ -1,0 +1,40 @@
+body {
+    background-image: url(./img/178759222.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+.navbar {
+    list-style-type: none;
+    text-align: center;
+    background-color: transparent;
+
+}
+
+
+.navbar li {
+    display: inline-block;
+    padding: 30px;
+}
+
+.navbar li:hover {
+    background-color: gold;
+    cursor: pointer;
+}
+
+.navbar a {
+    font-weight: bold;
+    font-size: x-large;
+    color: firebrick;
+    text-decoration: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.navbar a:hover {
+    color: orangered;
+}

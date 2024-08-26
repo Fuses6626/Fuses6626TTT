@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>井字遊戲</title>
+
+    <link rel="stylesheet" href="./TTTstyle.css">
+
+
+</head>
+
+<body>
+    <h1>井字遊戲</h1>
+
+    <div id="gameboard">
+
+
+
+    </div>
+
+    <p id="info"></p>
+
+    <script src="./TTTjavascript.js"></script>
+
+
+
+    <!-- 返回鍵部分 -->
+
+
+
+    <hr>
+    <div id="downbtn">
+        <button id="btnRF">重新開始</button>
+        <script>
+            btnRF.onclick = function () {
+                let res = window.confirm("再來一把?")
+                //重置確認
+
+                if (res === true) {
+                    window.location.reload();
+                }
+                //重置
+
+            }
+        </script>
+
+        <button id="turnback">返回</button>
+
+        <script>
+            turnback.onclick = function () {
+                let res = window.confirm("是否離開頁面?")
+                //離頁確認
+
+                if (res === true) {
+                    window.location.href = "../index.html";
+                }
+                //跳轉
+            }
+
+        </script>
+    </div>
+    <!-- 返回鍵結束 -->
+
+
+
+
+</body>
+
+</html>
